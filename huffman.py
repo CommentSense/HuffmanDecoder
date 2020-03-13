@@ -187,7 +187,7 @@ class HuffDecompressor:
                 # terminating symbol found. stop encoding
                 if character == 'ï':
                     message += '\n'
-                    break
+                    return message
                 # remove character we don't want to add to message
                 elif character == remove:
                     key = ""
@@ -200,5 +200,5 @@ class HuffDecompressor:
 
 
 if __name__ == "__main__":
-    huffman = HuffDecompressor("compressed.bin")
+    huffman = HuffDecompressor("compressed1.bin")
     huffman.decode(remove='\r')
